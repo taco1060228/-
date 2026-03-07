@@ -66,6 +66,7 @@ body {
     outline: none;
     transition: all 0.3s ease;
     box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
+    box-sizing: border-box;
 }
 
 #user-question:focus {
@@ -79,6 +80,27 @@ body {
     color: #e0e0e0;
     margin-top: 15px;
     font-weight: bold;
+}
+
+/* 修正：新增下拉選單樣式，確保不跑版 */
+#deck-style {
+    width: 100%;
+    max-width: 400px;
+    padding: 15px 20px;
+    font-size: 18px;
+    border: 2px solid #d4af37;
+    background-color: #ffffff; /* 白底黑字 */
+    color: #000000;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    box-sizing: border-box; /* 確保 padding 不撐開寬度 */
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23d4af37" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 15px center;
 }
 
 .fixed-selection {
@@ -189,6 +211,10 @@ body {
     .confirm-box {
         width: 90%;
         padding: 15px;
+    }
+    /* 修正手機版下拉選單寬度 */
+    #deck-style, .fixed-selection {
+        max-width: 90%;
     }
 }
 
